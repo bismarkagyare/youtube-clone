@@ -148,6 +148,18 @@ const Header = () => {
           icon={React.createElement(FeedbackOutlined)}
           title="Send Feedback"
         />
+        <hr></hr>
+        <div className="footer">
+          <p>About &nbsp; Press &nbsp; Copyright</p>
+          <p>Contact us &nbsp; Creators</p>
+          <p>Advertise &nbsp; Developers</p>
+          <br />
+          <p>Terms &nbsp; Privacy &nbsp; Policy & Safety</p>
+          <p>How YouTube works</p>
+          <p>Test new features</p>
+          <br />
+          <p className="llc">&#169; 2023 Google LLC</p>
+        </div>
       </div>
     </div>
   );
