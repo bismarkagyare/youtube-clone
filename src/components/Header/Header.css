@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px; /* Increase padding for top and bottom */
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -11,9 +11,9 @@
 }
 
 .header-logo {
-  height: 30px; /* Increase logo height */
-  width: auto; /* Allow width to adjust automatically */
-  margin-left: 20px;
+  height: 30px;
+  width: auto;
+  margin-left: 30px;
 }
 
 .header-left {
@@ -25,10 +25,10 @@
   display: flex;
   align-items: center;
   flex: 1;
-  margin-right: 20px; /* Increase margin for right spacing */
+  margin-right: 20px;
   background-color: #333;
-  border-radius: 30px; /* Increase border-radius for rounded corners */
-  padding: 7px 20px; /* Increase padding for search input */
+  border-radius: 30px;
+  padding: 7px 20px;
 }
 
 .header-input {
@@ -40,9 +40,9 @@
 .searchInput {
   flex: 1;
   border: none;
-  height: 35px !important; /* Increase input height */
-  padding-left: 15px; /* Increase padding for text input */
-  font-size: 1.2rem; /* Increase font size */
+  height: 35px !important;
+  padding-left: 15px;
+  font-size: 1.2rem;
   outline: none;
   background: none;
   color: #fff;
@@ -54,17 +54,17 @@
 }
 
 .header-searchBtn {
-  width: 60px !important; /* Increase button width */
+  width: 60px !important;
   border-left: 1px solid lightgray;
   color: #606060;
   cursor: pointer;
-  margin-left: -60px; /* Adjust margin-left for alignment */
+  margin-left: -60px;
   height: 100%;
 }
 
 .header-icons {
-  margin-right: 30px; /* Increase margin for right spacing */
-  font-size: 1.5rem; /* Increase icon size */
+  margin-right: 30px;
+  font-size: 1.5rem;
   color: #fff;
   cursor: pointer;
 }
