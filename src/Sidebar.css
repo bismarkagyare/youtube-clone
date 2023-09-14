@@ -16,15 +16,16 @@
 
 .sidebar::-webkit-scrollbar {
   width: 10px;
+  border-radius: 50%;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: #fff; /* Color of the thumb (the draggable part) */
-  border-radius: 5px; /* Rounded corners for the thumb */
+  background-color: #717171;
+  border-radius: 5px;
 }
 
 .sidebar::-webkit-scrollbar-track {
-  background-color: #222; /* Color of the track (the non-draggable part) */
+  background-color: #222;
 }
 
 .sidebar hr {
@@ -38,6 +39,22 @@
 .sidebar-heading {
   margin: 0 0 10px 20px;
   font-size: 1.3rem;
-  font-weight: 500;
   color: #fff;
+}
+
+.footer {
+  padding: 0 20px;
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer p {
+  cursor: pointer;
+}
+
+.llc {
+  color: rgb(142, 142, 142);
+  font-weight: 100;
 }

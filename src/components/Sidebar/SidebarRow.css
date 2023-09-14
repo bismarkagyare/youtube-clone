@@ -1,7 +1,7 @@
 .sidebar-row {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 270px;
   height: 20px;
   padding: 25px 20px;
   color: #fff;
@@ -18,7 +18,7 @@
   flex: 1;
   font-size: 1.2rem;
   font-weight: 500;
-  margin-left: 30px;
+  margin-left: 38px;
 }
 
 .sidebar-row:hover {
