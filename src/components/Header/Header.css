@@ -87,3 +87,52 @@
   border-radius: 50%;
   border: 1px solid red;
 } */
+
+/* Media Queries for Tablet (up to 768px) */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .header-logo {
+    margin-left: 15px;
+  }
+
+  .header-middle {
+    margin-right: 10px;
+    padding: 5px 15px;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .header-icons {
+    margin-right: 20px;
+  }
+}
+
+/* Media Queries for Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 10px;
+    background-color: red;
+  }
+
+  .header-logo {
+    margin-left: 10px;
+  }
+
+  .header-middle {
+    margin-right: 5px;
+    padding: 5px 10px;
+  }
+
+  .searchInput {
+    font-size: 0.9rem;
+  }
+
+  .header-icons {
+    margin-right: 10px;
+  }
+}
