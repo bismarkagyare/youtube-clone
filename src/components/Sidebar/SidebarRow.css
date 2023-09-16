@@ -1,7 +1,6 @@
 .sidebar-row {
   display: flex;
   align-items: center;
-  width: 290px;
   height: 20px;
   padding: 25px 20px;
   color: #fff;
@@ -25,4 +24,35 @@
   background-color: #272727;
   cursor: pointer;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar-row {
+    width: 150px;
+    padding: 20px 15px;
+  }
+
+  .sidebarRow-title {
+    font-size: 0.85rem;
+    margin-left: 20px;
+  }
+
+  .sidebarRow-icon {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-row {
+    margin-left: -10px;
+  }
+
+  .sidebarRow-title {
+    font-size: 0.7rem;
+    margin-left: 5px;
+  }
+
+  .sidebarRow-icon {
+    margin-left: 0;
+  }
 }

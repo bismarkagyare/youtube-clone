@@ -1,6 +1,7 @@
 .subscriptionRow {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 35px;
   padding: 25px 0;
   padding-left: 20px;
@@ -31,6 +32,7 @@
 .live-img {
   width: 22px;
   height: 18px;
+  object-fit: contain;
 }
 
 .left {
@@ -43,4 +45,61 @@
   display: flex;
   align-items: center;
   flex: 0.17;
+}
+
+@media (max-width: 768px) {
+  .channel-name {
+    font-size: 0.9rem;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .channel-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .left {
+    margin-left: 0;
+  }
+
+  .right {
+    flex: 0;
+  }
+
+  .live-img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subscriptionRow {
+    padding: 0;
+  }
+  .channel-name {
+    font-size: 0.6rem;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  .channel-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .left {
+    margin-left: 0;
+  }
+
+  .right {
+    flex: 0;
+  }
+
+  .live-img {
+    width: 12px;
+    height: 12px;
+  }
 }

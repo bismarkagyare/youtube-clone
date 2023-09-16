@@ -15,6 +15,7 @@
   height: 30px;
   width: auto;
   margin-left: 30px;
+  margin-bottom: 2px;
   cursor: pointer;
   background-color: #0f0f0f;
 }
@@ -96,11 +97,13 @@
 
   .header-logo {
     margin-left: 15px;
+    height: 20px;
+    width: auto;
   }
 
   .header-middle {
     margin-right: 10px;
-    padding: 5px 15px;
+    padding: 3px 15px;
   }
 
   .searchInput {
@@ -116,20 +119,31 @@
 @media screen and (max-width: 480px) {
   .header {
     padding: 10px;
-    background-color: red;
   }
 
   .header-logo {
-    margin-left: 10px;
+    margin-left: 5px;
+    height: 17px;
+    width: auto;
   }
 
   .header-middle {
     margin-right: 5px;
-    padding: 5px 10px;
+    width: 100px;
+    padding: 0;
+  }
+
+  .header-input {
+    padding: 0;
+  }
+
+  .header-searchBtn {
+    width: 30px !important;
   }
 
   .searchInput {
     font-size: 0.9rem;
+    height: 20px;
   }
 
   .header-icons {
