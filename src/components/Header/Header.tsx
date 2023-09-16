@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
@@ -12,11 +12,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
+  const [iconSize, setIconSize] = useState(35);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 480) {
+        setIconSize(19);
+      } else if (screenWidth <= 768) {
+        setIconSize(25);
+      } else {
+        setIconSize(35);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="header">
       <div className="header-left">
         <div onClick={onSidebarToggle} className="menu-icon">
-          <MenuOutlinedIcon style={{ color: 'white', fontSize: 35 }} />
+          <MenuOutlinedIcon style={{ color: 'white', fontSize: iconSize }} />
         </div>
         <img
           className="header-logo"
@@ -29,21 +52,30 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
           <input className="searchInput" placeholder="Search" type="text" />
           <SearchIcon
             className="header-searchBtn"
-            style={{ color: 'white', fontSize: 30 }}
+            style={{ color: 'white', fontSize: iconSize }}
           />
         </div>
-        <MicIcon className="header-icons" style={{ fontSize: 35 }} />
+        <MicIcon className="header-icons" style={{ fontSize: iconSize }} />
       </div>
       <div className="header-right">
         <VideoCallOutlinedIcon
           className="header-icons"
-          style={{ fontSize: 35 }}
+          style={{ fontSize: iconSize }}
         />
         <NotificationsNoneOutlinedIcon
           className="header-icons"
-          style={{ fontSize: 35 }}
+          style={{ fontSize: iconSize }}
         />
-        <Avatar>B</Avatar>
+        <Avatar
+          className="header-icons"
+          style={{
+            width: iconSize + 'px',
+            height: iconSize + 'px',
+            fontSize: 15,
+          }}
+        >
+          B
+        </Avatar>
       </div>
     </div>
   );
