@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './Header/Header.css';
+import Header from './Header/Header';
 import Tags from './Tags/Tags';
-import './Sidebar/Sidebar.css';
 import Sidebar from './Sidebar/Sidebar';
 import MiniSidebar from './Sidebar/MiniSidebar';
-import Header from './Header/Header';
+import './Header/Header.css';
+import './Sidebar/Sidebar.css';
 
 const Layout: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -14,7 +14,7 @@ const Layout: React.FC = () => {
   };
 
   return (
-    <div className="parent-header">
+    <div className="parent-container">
       <Header onSidebarToggle={toggleSidebar} />
       <div className="content-page">
         {showSidebar ? <Sidebar /> : <MiniSidebar />}
