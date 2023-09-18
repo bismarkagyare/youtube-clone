@@ -93,7 +93,6 @@
   cursor: pointer;
 }
 
-/* content page styles */
 .content-page {
   display: grid;
   grid-template-columns: 1fr 3fr;
