@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './UniversityList.css';
 interface University {
   name: string;
 }
@@ -13,10 +14,21 @@ const UniversityList: React.FC = () => {
   useEffect(() => {
     const fetchUniversities = async () => {
       try {
-        const response = await axios.get(
-          'http://universities.hipolabs.com/search?country=ghana'
-        );
-        setUniversities(response.data);
+        const cachedData = localStorage.getItem('universityData');
+
+        if (cachedData) {
+          // if data is found in local storage, use it
+          setUniversities(JSON.parse(cachedData));
+        } else {
+          // if no data is found, make the API request
+          const response = await axios.get(
+            'http://universities.hipolabs.com/search?country=ghana'
+          );
+          setUniversities(response.data);
+
+          // save the fetched data to local storage
+          localStorage.setItem('universityData', JSON.stringify(response.data));
+        }
       } catch (error) {
         console.error('Error fetching data', error);
         setError('An error occurred while fetching data');
@@ -26,7 +38,7 @@ const UniversityList: React.FC = () => {
     fetchUniversities();
   }, []);
 
-  // Logic for pagination
+  // logic for pagination
   const indexOfLastUniversity = currentPage * universitiesPerPage;
   const indexOfFirstUniversity = indexOfLastUniversity - universitiesPerPage;
   const currentUniversities = universities.slice(
@@ -34,7 +46,7 @@ const UniversityList: React.FC = () => {
     indexOfLastUniversity
   );
 
-  // Change page
+  // change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
