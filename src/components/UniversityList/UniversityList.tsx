@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './UniversityList.css';
-
 interface University {
   name: string;
 }
 
 const UniversityList: React.FC = () => {
   const [universities, setUniversities] = useState<University[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const universitiesPerPage = 5;
 
   useEffect(() => {
     const fetchUniversities = async () => {
@@ -20,19 +20,39 @@ const UniversityList: React.FC = () => {
         console.error('Error fetching data', error);
       }
     };
+
     fetchUniversities();
   }, []);
 
+  // Logic for pagination
+  const indexOfLastUniversity = currentPage * universitiesPerPage;
+  const indexOfFirstUniversity = indexOfLastUniversity - universitiesPerPage;
+  const currentUniversities = universities.slice(
+    indexOfFirstUniversity,
+    indexOfLastUniversity
+  );
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
     <div>
-      <h2 className="uni">University List will go here.</h2>
+      <h2 className="uni">University List</h2>
       <ul>
-        {universities.map((university) => (
-          <li className="uni" key={university.name}>
-            {university.name}
-          </li>
+        {currentUniversities.map((university) => (
+          <li key={university.name}>{university.name}</li>
         ))}
       </ul>
+      {/* Pagination buttons */}
+      <div>
+        {Array.from({
+          length: Math.ceil(universities.length / universitiesPerPage),
+        }).map((_, index) => (
+          <button key={index + 1} onClick={() => paginate(index + 1)}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
