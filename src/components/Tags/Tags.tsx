@@ -1,6 +1,7 @@
 import './Tags.css';
 import { NavigateNext } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
+import UniversityList from '../UniversityList/UniversityList';
 
 const tagNames: string[] = [
   'All',
@@ -38,13 +39,16 @@ const Tags: React.FC = () => {
     };
   }, []);
   return (
-    <div className="tags">
-      {visibleTags.map((tagName, index) => (
-        <div key={index} className="mini-tags">
-          {tagName}
-        </div>
-      ))}
-      <NavigateNext className="next" />
+    <div className="main">
+      <div className="tags">
+        {visibleTags.map((tagName, index) => (
+          <div key={index} className="mini-tags">
+            {tagName}
+          </div>
+        ))}
+        <NavigateNext className="next" />
+      </div>
+      <UniversityList />
     </div>
   );
 };
